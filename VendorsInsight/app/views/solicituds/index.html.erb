@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Solicituds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Vendedor</th>
+      <th>Cliente</th>
+      <th>Disenador</th>
+      <th>Linea</th>
+      <th>Tipo</th>
+      <th>Set tallas</th>
+      <th>Contramuestra</th>
+      <th>Referencia</th>
+      <th>Talla</th>
+      <th>Muestra tela</th>
+      <th>Nombre tela</th>
+      <th>Adjunto</th>
+      <th>Cantidad</th>
+      <th>Especificacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicituds.each do |solicitud| %>
+      <tr>
+        <td><%= solicitud.fecha %></td>
+        <td><%= solicitud.vendedor_id %></td>
+        <td><%= solicitud.cliente %></td>
+        
+        <td><%= solicitud.linea %></td>
+        <td><%= solicitud.tipo %></td>
+        <td><%= solicitud.set_tallas %></td>
+        <td><%= solicitud.contramuestra %></td>
+        <td><%= solicitud.referencia %></td>
+        <td><%= solicitud.talla %></td>
+        <td><%= solicitud.muestra_tela %></td>
+        <td><%= solicitud.nombre_tela %></td>
+        <td><%= solicitud.adjunto %></td>
+        <td><%= solicitud.cantidad %></td>
+        <td><%= solicitud.especificacion %></td>
+        <td><%= link_to 'Show', solicitud %></td>
+        <td><%= link_to 'Edit', edit_solicitud_path(solicitud) %></td>
+        <td><%= link_to 'Destroy', solicitud, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solicitud', new_solicitud_path %>

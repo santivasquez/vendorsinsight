@@ -1,0 +1,74 @@
+<%= form_for(@solicitud) do |f| %>
+  <% if @solicitud.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@solicitud.errors.count, "error") %> prohibited this solicitud from being saved:</h2>
+
+      <ul>
+      <% @solicitud.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :cliente %><br>
+    <%= f.text_field :cliente %>
+  </div>
+  <div class="field">
+    <%= f.label :disenador_id %><br>
+    <%= f.text_field :disenador_id %>
+  </div>
+  <div class="field">
+    <%= f.label :linea %><br>
+    <%= f.text_field :linea %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :set_tallas %><br>
+    <%= f.check_box :set_tallas %>
+  </div>
+  <div class="field">
+    <%= f.label :contramuestra %><br>
+    <%= f.check_box :contramuestra %>
+  </div>
+  <div class="field">
+    <%= f.label :referencia %><br>
+    <%= f.text_field :referencia %>
+  </div>
+  <div class="field">
+    <%= f.label :talla %><br>
+    <%= f.number_field :talla %>
+  </div>
+  <div class="field">
+    <%= f.label :muestra_tela %><br>
+    <%= f.check_box :muestra_tela %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_tela %><br>
+    <%= f.text_field :nombre_tela %>
+  </div>
+  <div class="field">
+    <%= f.label :adjunto %><br>
+    <%= f.check_box :adjunto %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br>
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="field">
+    <%= f.label :especificacion %><br>
+    <%= f.text_field :especificacion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
