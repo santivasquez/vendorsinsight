@@ -1,7 +1,8 @@
+<center>
 <%= form_for(@solicitud) do |f| %>
   <% if @solicitud.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@solicitud.errors.count, "error") %> prohibited this solicitud from being saved:</h2>
+      <h2><%= pluralize(@solicitud.errors.count, "error") %> Revisa los campos</h2>
 
       <ul>
       <% @solicitud.errors.full_messages.each do |message| %>
@@ -10,15 +11,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.date_select :fecha %>
-  </div>
-  <div class="field">
-    <%= f.label :vendedor_id %><br>
-    <%= f.text_field :vendedor_id %>
-  </div>
+  
   <div class="field">
     <%= f.label :cliente %><br>
     <%= f.text_field :cliente %>
@@ -75,3 +68,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</center>
