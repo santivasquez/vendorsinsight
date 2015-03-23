@@ -5,9 +5,7 @@ class SolicitudsController < ApplicationController
   # GET /solicituds.json
   def index
     @solicituds = Solicitud.all
-    @vendedor = Usuario.first
-    
-    
+    @vendedor = Usuario.first    
   end
 
   # GET /solicituds/1
@@ -17,10 +15,7 @@ class SolicitudsController < ApplicationController
 
   # GET /solicituds/new
   def new
-    
     @solicitud = Solicitud.new
-    
-    
   end
 
   # GET /solicituds/1/edit
@@ -34,9 +29,10 @@ class SolicitudsController < ApplicationController
     @vendedor = Usuario.first
     @solicitud.vendedor_id = @vendedor.id
     @solicitud.estado = 0
+    @solicitud.fecha = Date.today
     respond_to do |format|
       if @solicitud.save
-        format.html { redirect_to @solicitud, notice: 'Solicitud was successfully created.' }
+        format.html { redirect_to @solicitud, notice: 'Solicitud realizada exitosamente.' }
         format.json { render :show, status: :created, location: @solicitud }
       else
         format.html { render :new }
@@ -50,7 +46,7 @@ class SolicitudsController < ApplicationController
   def update
     respond_to do |format|
       if @solicitud.update(solicitud_params)
-        format.html { redirect_to @solicitud, notice: 'Solicitud was successfully updated.' }
+        format.html { redirect_to @solicitud, notice: 'Solicitud modificada exitosamente.' }
         format.json { render :show, status: :ok, location: @solicitud }
       else
         format.html { render :edit }
@@ -64,7 +60,7 @@ class SolicitudsController < ApplicationController
   def destroy
     @solicitud.destroy
     respond_to do |format|
-      format.html { redirect_to solicituds_url, notice: 'Solicitud was successfully destroyed.' }
+      format.html { redirect_to solicituds_url, notice: 'Solicitud borrada.' }
       format.json { head :no_content }
     end
   end

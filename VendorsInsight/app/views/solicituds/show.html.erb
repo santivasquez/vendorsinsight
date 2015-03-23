@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Atrás', solicituds_path %>
 
 <p>
   <strong>Fecha:</strong>
@@ -75,5 +76,4 @@
   <%= @solicitud.especificacion %>
 </p>
 
-<%= link_to 'Edit', edit_solicitud_path(@solicitud) %> |
-<%= link_to 'Back', solicituds_path %>
+<%= link_to 'Editar', edit_solicitud_path(@solicitud) %>
