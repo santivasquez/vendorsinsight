@@ -76,4 +76,12 @@
   <%= @solicitud.especificacion %>
 </p>
 
-<%= link_to 'Editar', edit_solicitud_path(@solicitud) %>
+<p>
+  <strong>Estado:</strong>
+  <% if @solicitud.estado == 0 %>
+		<%= "pendiente" %>
+		<% end %>
+</p>
+
+
+
