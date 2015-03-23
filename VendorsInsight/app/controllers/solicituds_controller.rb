@@ -16,6 +16,7 @@ class SolicitudsController < ApplicationController
   # GET /solicituds/new
   def new
     @solicitud = Solicitud.new
+    @vendedor = Usuario.first
   end
 
   # GET /solicituds/1/edit

@@ -3,6 +3,6 @@
 <center>
 <h1>Nueva Solicitud</h1>
 </center>
-
+<%= link_to 'Atrás', controller: 'login' %>
 <%= render 'form' %>
 
