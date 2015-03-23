@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322211649) do
+ActiveRecord::Schema.define(version: 20150323000128) do
 
   create_table "solicituds", force: :cascade do |t|
     t.date     "fecha"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150322211649) do
     t.string   "especificacion"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "estado"
   end
 
   add_index "solicituds", ["disenador_id"], name: "index_solicituds_on_disenador_id"

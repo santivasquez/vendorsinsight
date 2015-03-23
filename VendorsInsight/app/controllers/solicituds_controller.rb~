@@ -5,7 +5,7 @@ class SolicitudsController < ApplicationController
   # GET /solicituds.json
   def index
     @solicituds = Solicitud.all
-    
+    @vendedor = Usuario.first
     
     
   end
@@ -32,7 +32,8 @@ class SolicitudsController < ApplicationController
   def create
     @solicitud = Solicitud.new(solicitud_params)
     @vendedor = Usuario.first
-    @solicitud.vendedor_id = @vendedor.nombre
+    @solicitud.vendedor_id = @vendedor.id
+    @solicitud.estado = 0
     respond_to do |format|
       if @solicitud.save
         format.html { redirect_to @solicitud, notice: 'Solicitud was successfully created.' }

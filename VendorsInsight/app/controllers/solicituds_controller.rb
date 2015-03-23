@@ -5,7 +5,7 @@ class SolicitudsController < ApplicationController
   # GET /solicituds.json
   def index
     @solicituds = Solicitud.all
-    
+    @vendedor = Usuario.first
     
     
   end
@@ -33,6 +33,7 @@ class SolicitudsController < ApplicationController
     @solicitud = Solicitud.new(solicitud_params)
     @vendedor = Usuario.first
     @solicitud.vendedor_id = @vendedor.id
+    @solicitud.estado = 0
     respond_to do |format|
       if @solicitud.save
         format.html { redirect_to @solicitud, notice: 'Solicitud was successfully created.' }
@@ -76,6 +77,6 @@ class SolicitudsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def solicitud_params
-      params.require(:solicitud).permit(:fecha,:vendedor_id, :cliente, :disenador_id, :linea, :tipo, :set_tallas, :contramuestra, :referencia, :talla, :muestra_tela, :nombre_tela, :adjunto, :cantidad, :especificacion)
+      params.require(:solicitud).permit(:fecha,:vendedor_id, :cliente, :disenador_id, :linea, :tipo, :set_tallas, :contramuestra, :referencia, :talla, :muestra_tela, :nombre_tela, :adjunto, :cantidad, :especificacion, :estado)
     end
 end
