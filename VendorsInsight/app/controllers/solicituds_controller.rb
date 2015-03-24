@@ -11,6 +11,8 @@ class SolicitudsController < ApplicationController
   # GET /solicituds/1
   # GET /solicituds/1.json
   def show
+    
+    @vendedor = Usuario.first   
   end
 
   # GET /solicituds/new
