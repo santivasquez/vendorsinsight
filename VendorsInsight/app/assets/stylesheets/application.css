@@ -12,3 +12,13 @@
  *= require_tree .
  *= require_self
  */
+
+#crearSol{
+	background-color: #E62323 !important;
+	color: #FFFFFF !important;
+}
+
+#verSol{
+	background-color: #E62323 !important;
+	color: #FFFFFF !important;
+}
